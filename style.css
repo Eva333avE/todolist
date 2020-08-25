@@ -16,11 +16,43 @@ body {
 
 header {
   font-size: 1.5rem;
+  min-height: 20vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  line-height: 3rem;
+  margin-top: 4em;
+  padding-left: 45px;
 }
 
-header,
-form {
-  min-height: 20vh;
+header h1 {
+  width: 80%;
+}
+
+header p {
+  max-width: 700px;
+  width: 80%;
+  display: block;
+  padding: 2rem 0px;
+  letter-spacing: 0.8px;
+}
+
+form,
+form .inputWrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -33,27 +65,38 @@ form {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 form input,
 form button {
-  padding: 0.5rem;
+  padding: 0.45rem 0.7rem;
   font-size: 2rem;
   border: none;
   background: #fff;
 }
 
 form {
+  margin: 30px 0;
   border: none;
 }
 
-form button {
+form .inputWrapper input {
+  width: 55vw;
+  position: relative;
+  color: #ff6f47;
+}
+
+form .inputWrapper button {
   color: #d88771;
   background-color: #fff;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 form button:hover {
@@ -69,7 +112,7 @@ form .selectWrapper {
 
 form .selectWrapper select {
   color: #d88771;
-  width: 18rem;
+  min-width: 20rem;
   padding: 0.45rem 1rem;
   font-size: 2rem;
   cursor: pointer;
@@ -120,9 +163,10 @@ form .selectWrapper:hover::after {
 }
 
 .todo-container .todo-list .todo {
+  width: 250px;
   margin: 0.5rem;
   background: #fff;
-  color: #000000;
+  color: #7c4c0d;
   font-size: 1.5rem;
   display: -webkit-box;
   display: -webkit-flex;
@@ -181,5 +225,57 @@ form .selectWrapper:hover::after {
       -ms-transform: translateY(8rem) rotate(20deg);
           transform: translateY(8rem) rotateZ(20deg);
   opacity: 0;
+}
+
+@media (max-width: 790px) {
+  p {
+    line-height: 2rem;
+  }
+  form {
+    margin: 10px 5px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .inputWrapper input {
+    min-width: 80vw;
+  }
+  select.filter-todo {
+    min-width: 60vw;
+  }
+}
+
+@media (max-width: 475px) {
+  header {
+    margin-top: 40px;
+  }
+  p {
+    line-height: 2rem;
+    font-size: 20px;
+  }
+  form {
+    margin: 10px 5px;
+  }
+  form select.filter-todo {
+    min-width: 80vw;
+  }
+  form .selectWrapper select,
+  form .selectWrapper::after {
+    padding: 0.3rem .6rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 330px) {
+  p {
+    line-height: 1.6rem;
+    font-size: 18px;
+  }
+  form .selectWrapper select,
+  form .selectWrapper::after {
+    font-size: 1.3rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
