@@ -97,6 +97,8 @@ form .inputWrapper button {
   position: absolute;
   top: 0;
   right: 0;
+  border: none;
+  outline: none;
 }
 
 form button:hover {
@@ -163,7 +165,7 @@ form .selectWrapper:hover::after {
 }
 
 .todo-container .todo-list .todo {
-  width: 250px;
+  width: 55vw;
   margin: 0.5rem;
   background: #fff;
   color: #7c4c0d;
